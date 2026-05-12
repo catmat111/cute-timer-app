@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos de emergência se o Tailwind falhar */
+body {
+  background-color: #F0F4EF !important;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+}
+
+.main-container {
+  border: 10px solid rgba(193, 215, 174, 0.3);
+  min-height: 100vh;
+}
+
+/* Deixa os botões arredondados por padrão */
+button {
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border-radius: 12px;
+  padding: 10px;
+  border: 2px solid #E0BBE4;
+}

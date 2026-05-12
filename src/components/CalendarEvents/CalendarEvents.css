@@ -1,0 +1,129 @@
+.calendar-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px solid #E8F5E9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 350px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #F9FBF9;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.month-title {
+    font-weight: 800;
+    color: #8DA37E;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-style: italic;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #C1D7AE;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+    color: #8DA37E;
+}
+
+.weekdays-grid {
+    display: grid;
+    grid-cols: 7;
+    margin-bottom: 10px;
+}
+
+.weekday-label {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: #C1D7AE;
+    text-transform: uppercase;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.day-cell {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.notes-area {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #F0F4EF;
+    border-radius: 20px;
+    border: 2px dashed #C1D7AE;
+}
+
+.event-input-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.event-input {
+    flex: 1;
+    background: white;
+    border: 2px solid #E8F5E9;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 11px;
+    outline: none;
+    font-family: inherit;
+}
+
+.event-input:focus {
+    border-color: #FFD1DC;
+}
+
+.event-item {
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid #FF8B94;
+}
+
+.day-has-event {
+    width: 4px;
+    height: 4px;
+    background-color: #FF8B94;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 4px;
+}
