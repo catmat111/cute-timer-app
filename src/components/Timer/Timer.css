@@ -112,17 +112,22 @@
 /* Modais */
 .finished-modal {
     position: fixed;
-    bottom: 30px;
+    /* Centraliza o modal no ecrã */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%); 
     background-color: white;
-    padding: 20px;
-    border-radius: 25px;
-    border: 3px solid #FFD1DC;
-    box-shadow: 0 15px 40px rgba(255, 139, 148, 0.2);
-    z-index: 1000;
+    padding: 30px;
+    border-radius: 30px;
+    border: 4px solid #FFD1DC;
+    box-shadow: 0 20px 60px rgba(255, 139, 148, 0.3);
+    z-index: 2000; /* Garante que fica acima de tudo */
     width: 280px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .modal-overlay {
@@ -175,4 +180,171 @@
 .config-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.config-modal-v2 {
+    background-color: white;
+    padding: 25px;
+    border-radius: 35px;
+    border: 4px solid #FFD1DC;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 20px 60px rgba(255, 139, 148, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.modal-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: #FF8B94;
+    letter-spacing: 2px;
+    background: #FFF0F5;
+    padding: 5px 12px;
+    border-radius: 10px;
+}
+
+.time-display-large {
+    text-align: center;
+}
+
+.time-display-large .number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FF8B94;
+    display: block;
+    line-height: 1;
+}
+
+.time-display-large .unit {
+    font-size: 1rem;
+    color: #FFB7B2;
+    font-weight: 700;
+}
+
+/* Custom Slider */
+.slider-wrapper {
+    width: 100%;
+    max-width: 240px; /* Define uma largura máxima para não tocar nas bordas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto; /* Centra o bloco horizontalmente */
+    position: relative;
+}
+
+.custom-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px; /* Aumentei um pouco a altura para parecer a "pílula" da imagem */
+    border-radius: 20px;
+    background: #F0F4EF;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #D1C4E9; /* Borda suave como na imagem */
+    margin: 0;
+}
+
+/* O "botão" (thumb) da barra */
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 26px;
+    height: 26px;
+    background: #FF8B94;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 139, 148, 0.4);
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+/* Ajuste no grid de presets para alinhar com a barra */
+.presets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 240px; /* Mesma largura da barra para alinhamento vertical */
+    margin-top: 10px;
+}
+
+.preset-pill {
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #FFF0F5;
+    background: white;
+    color: #FF8B94;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.preset-pill.active {
+    background: #FFD1DC;
+    border-color: #FFD1DC;
+    color: #D64550;
+    transform: scale(1.05);
+}
+
+.save-btn-v2 {
+    width: 100%;
+    background: #C1D7AE;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(193, 215, 174, 0.3);
+}
+
+
+.config-modal-v2, .finished-modal {
+    position: fixed;
+    /* Em vez de 50%, usamos estas propriedades para ajudar o Framer Motion */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; 
+    
+    background-color: white;
+    padding: 25px;
+    border-radius: 35px;
+    border: 4px solid #FFD1DC;
+    width: 280px;
+    height: fit-content; /* Importante para o margin: auto funcionar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 20px 60px rgba(255, 139, 148, 0.3);
+    z-index: 1001;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
 }
